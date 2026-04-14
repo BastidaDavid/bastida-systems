@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bastida Systems</title>
+  <link rel="icon" type="image/png" href="img/logo_bastida_sys.png">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font (Manrope style) -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: #0a0a0a;
+      letter-spacing: 0.02em;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #00ff9c 0%, #00ff9c 40%, #ffffff 60%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+      line-height: 1.15;
+      padding-bottom: 0.12em;
+    }
+  </style>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+  <!-- NAVBAR -->
+  <nav class="flex justify-between items-center px-8 py-5 border-b border-gray-200 bg-white sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <img src="img/logo_bastida_sys.png" alt="Bastida Systems Logo" class="h-8 w-auto object-contain">
+      <span class="text-base font-semibold tracking-[0.08em] text-black uppercase">Bastida Systems LLC</span>
+    </div>
+
+    <div class="flex items-center gap-8 text-sm font-medium text-gray-600">
+      <a href="#products" class="hover:text-black transition">Products</a>
+      <a href="about.html" class="hover:text-black transition">About</a>
+      <a href="#contact" class="hover:text-black transition">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden fade-in">
+    <div class="absolute inset-0 bg-gradient-to-br from-transparent via-gray-900/40 to-black z-0"></div>
+    <img src="img/logo_bastida_sys.png" alt="Background Logo" class="absolute inset-0 m-auto -translate-y-10 w-96 opacity-10 pointer-events-none select-none z-0">
+    
+    <h1 class="text-5xl md:text-7xl font-bold mb-10 relative z-20 gradient-text leading-[1.15] tracking-normal">
+      Engineering Intelligent Systems
+    </h1>
+
+    <p class="text-lg text-gray-400 max-w-2xl mb-8 relative z-20">
+      Bastida Systems develops intelligent software platforms that enable operations to monitor critical infrastructure, reduce operational risk, and maintain compliance through real-time data and automation.
+    </p>
+
+    <div class="flex gap-4 relative z-20">
+      <a href="#products" class="px-6 py-3 bg-white text-black rounded-full font-medium hover:opacity-80 transition duration-300 hover:scale-105 inline-block">
+        Explore Products
+      </a>
+      <a href="#contact" class="px-6 py-3 border border-gray-600 rounded-full hover:border-white transition duration-300 hover:scale-105 inline-block">
+        Contact
+      </a>
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="px-8 py-20 border-t border-gray-800 fade-in">
+
+    <h2 class="text-3xl font-semibold mb-10">Products</h2>
+
+    <div class="bg-gray-900/60 backdrop-blur-md p-8 rounded-2xl border border-gray-800 hover:border-gray-600 transition">
+      <div class="flex items-center justify-between gap-10">
+
+        <div class="max-w-xl">
+
+          <div class="flex items-center gap-3 mb-4">
+            <img src="img/LOGO_FILTRACOREXCODE.png" alt="FiltraCore Logo" class="w-8 h-8 object-contain">
+            <h3 class="text-2xl font-semibold">FiltraCore</h3>
+          </div>
+
+          <p class="text-gray-400 mb-6">
+            A smart filtration monitoring system designed for casinos, restaurants, and industrial environments. 
+            Track PSI, filter lifespan, and maintenance in real time.
+          </p>
+
+          <a href="filtracore.html" class="px-5 py-2 border border-gray-600 rounded-full hover:border-white transition duration-300 hover:scale-105 inline-block">
+            Learn More
+          </a>
+
+        </div>
+
+        <img src="img/BG.jpg" alt="FiltraCore Visual" class="w-72 object-contain hidden md:block">
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="px-8 py-20 border-t border-gray-800 fade-in">
+    <h2 class="text-3xl font-semibold mb-8">Contact</h2>
+    <p class="text-gray-400 max-w-2xl leading-8 mb-6">
+      Interested in FiltraCore or custom intelligent systems for your operation? Let’s connect.
+    </p>
+    <a href="mailto:hello@bastidasystems.com" class="inline-block px-6 py-3 border border-gray-600 rounded-full hover:border-white transition duration-300 hover:scale-105">
+      hello@bastidasystems.com
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="px-8 py-10 border-t border-gray-800 text-gray-500 text-sm text-center">
+
+    <div class="flex justify-center gap-6 mb-4 text-gray-400">
+      <a href="index.html#products" class="hover:text-white transition">Products</a>
+      <a href="about.html" class="hover:text-white transition">About</a>
+      <a href="index.html#contact" class="hover:text-white transition">Contact</a>
+    </div>
+
+    <p>© 2026 Bastida Systems. All rights reserved.</p>
+
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
