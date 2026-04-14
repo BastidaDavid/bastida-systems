@@ -21,23 +21,40 @@
 
 <body class="text-white">
 
-  <!-- NAVBAR -->
-  <nav class="flex justify-between items-center px-4 md:px-8 py-5 border-b border-gray-200 bg-white sticky top-0 z-50">
+  <div id="site-header"></div>
 
-    <div class="flex items-center gap-3">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="img/logo_bastida_sys.png" alt="Bastida Systems Logo" class="h-8 w-auto object-contain">
-        <span class="hidden md:inline text-base font-semibold tracking-[0.08em] text-black uppercase">Bastida Systems LLC</span>
-      </a>
-    </div>
+  <script>
+    const sharedHeader = `
+      <nav class="flex justify-between items-center px-4 md:px-8 py-5 border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="img/logo_bastida_sys.png" alt="Bastida Systems Logo" class="h-8 w-auto object-contain">
+            <span class="hidden md:inline text-base font-semibold tracking-[0.08em] text-black uppercase">Bastida Systems LLC</span>
+          </a>
+        </div>
 
-    <div class="flex items-center gap-4 md:gap-8 text-sm font-medium text-gray-600">
-      <a href="index.html#products" class="hover:text-black transition">Products</a>
-      <a href="about.html" class="hover:text-black transition">About</a>
-      <a href="index.html#contact" class="hover:text-black transition">Contact</a>
-    </div>
+        <div class="flex items-center gap-4 md:gap-8 text-sm font-medium text-gray-600">
+          <a href="index.html#products" class="hover:text-black transition">Products</a>
+          <a href="about.html" class="hover:text-black transition">About</a>
+          <a href="index.html#contact" class="hover:text-black transition">Contact</a>
+        </div>
+      </nav>
+    `;
 
-  </nav>
+    const headerTarget = document.getElementById('site-header');
+
+    fetch('header.html')
+      .then(response => {
+        if (!response.ok) throw new Error('header.html not found');
+        return response.text();
+      })
+      .then(html => {
+        headerTarget.innerHTML = html;
+      })
+      .catch(() => {
+        headerTarget.innerHTML = sharedHeader;
+      });
+  </script>
 
   <!-- HERO -->
   <section class="px-8 py-24 text-center border-b border-gray-800">

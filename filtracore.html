@@ -24,23 +24,40 @@
 
 <body class="text-black bg-white">
 
-  <!-- NAVBAR -->
-  <nav class="flex justify-between items-center px-4 md:px-8 py-5 border-b border-gray-200 bg-white sticky top-0 z-50">
+  <div id="site-header"></div>
 
-    <div class="flex items-center gap-3">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="img/logo_bastida_sys.png" alt="Bastida Systems Logo" class="h-8 w-auto object-contain">
-        <span class="hidden md:inline text-base font-semibold tracking-[0.08em] text-black uppercase">Bastida Systems LLC</span>
-      </a>
-    </div>
+  <script>
+    const sharedHeader = `
+      <nav class="flex justify-between items-center px-4 md:px-8 py-5 border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="img/logo_bastida_sys.png" alt="Bastida Systems Logo" class="h-8 w-auto object-contain">
+            <span class="hidden md:inline text-base font-semibold tracking-[0.08em] text-black uppercase">Bastida Systems LLC</span>
+          </a>
+        </div>
 
-    <div class="flex items-center gap-4 md:gap-8 text-sm font-medium text-gray-600">
-      <a href="index.html#products" class="hover:text-black transition">Products</a>
-      <a href="about.html" class="hover:text-black transition">About</a>
-      <a href="index.html#contact" class="hover:text-black transition">Contact</a>
-    </div>
+        <div class="flex items-center gap-4 md:gap-8 text-sm font-medium text-gray-600">
+          <a href="index.html#products" class="hover:text-black transition">Products</a>
+          <a href="about.html" class="hover:text-black transition">About</a>
+          <a href="index.html#contact" class="hover:text-black transition">Contact</a>
+        </div>
+      </nav>
+    `;
 
-  </nav>
+    const headerTarget = document.getElementById('site-header');
+
+    fetch('header.html')
+      .then(response => {
+        if (!response.ok) throw new Error('header.html not found');
+        return response.text();
+      })
+      .then(html => {
+        headerTarget.innerHTML = html;
+      })
+      .catch(() => {
+        headerTarget.innerHTML = sharedHeader;
+      });
+  </script>
 
   <!-- HERO -->
   <section class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
@@ -58,13 +75,16 @@
       Track Every Filter.<br>Prevent Every Failure.
     </h1>
 
-    <p class="text-gray-600 max-w-2xl mb-8 relative z-10">
-      FiltraCore is a smart filtration monitoring system designed for casinos, restaurants, 
-      and industrial operations. Monitor PSI, track filter lifespan, and automate maintenance.
+    <p class="text-gray-600 max-w-3xl mb-8 leading-8 relative z-10">
+      FiltraCore is a smart filtration monitoring system designed for casinos, restaurants,
+      and industrial operations. It is built around preventive maintenance workflows inspired by
+      FDA Food Code guidance, HACCP system thinking, and NSF-aligned sanitation practices to help
+      teams monitor PSI, track filter lifespan, document replacements, and maintain cleaner,
+      more consistent water systems.
     </p>
 
     <div class="flex gap-4 relative z-10">
-      <a href="mailto:hello@bastidasystems.com" class="px-6 py-3 bg-black text-white rounded-full font-medium hover:opacity-90 hover:scale-105 transition inline-block">
+      <a href="mailto:bastidasystems@gmail.com" class="px-6 py-3 bg-black text-white rounded-full font-medium hover:opacity-90 hover:scale-105 transition inline-block">
         Request Demo
       </a>
       <a href="app/index.html" class="px-6 py-3 border border-gray-200 rounded-full hover:border-black transition">
@@ -82,16 +102,20 @@
 
       <div class="p-6 border border-gray-200 rounded-xl">
         <h3 class="text-xl font-semibold mb-3">PSI Monitoring</h3>
-        <p class="text-gray-600">
+        <p class="text-gray-600 mb-2">
           Track pressure levels in real-time to detect issues before failures happen.
         </p>
+
+        <img src="img/PSImonitoring.png" alt="PSI Monitoring" class="w-full h-auto rounded-lg mt-0 mb-1 scale-110">
       </div>
 
       <div class="p-6 border border-gray-200 rounded-xl">
         <h3 class="text-xl font-semibold mb-3">Filter Lifespan</h3>
-        <p class="text-gray-600">
+        <p class="text-gray-600 mb-4">
           Automatically calculate remaining life based on usage and time.
         </p>
+
+        <img src="img/Filter Lifespan.png" alt="Filter Lifespan" class="w-full h-auto rounded-lg mt-0 mb-1 scale-110">
       </div>
 
       <div class="p-6 border border-gray-200 rounded-xl">
@@ -110,14 +134,97 @@
 
   </section>
 
+  <!-- COMPLIANCE SECTION -->
+  <section class="px-8 py-20 border-t border-gray-200">
+
+    <h2 class="text-3xl font-semibold mb-6 text-center">Built around food safety systems</h2>
+
+    <p class="text-gray-600 max-w-3xl mx-auto text-center leading-8 mb-12">
+      FiltraCore is designed to support operational routines inspired by FDA Food Code principles,
+      HACCP-style preventive control systems, and NSF-focused sanitation best practices. Rather than waiting
+      for failures, teams can document filter activity, verify replacement intervals, and build cleaner
+      maintenance habits into daily operations.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="p-6 border border-gray-200 rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">HACCP mindset</h3>
+        <p class="text-gray-600 leading-7">
+          Apply preventive thinking to water filtration by treating PSI drops, overdue filters, and poor water flow
+          as critical warning points before they affect service quality, equipment reliability, or food safety routines.
+        </p>
+      </div>
+
+      <div class="p-6 border border-gray-200 rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">FIFO filter rotation</h3>
+        <p class="text-gray-600 leading-7">
+          Support first-in, first-out inventory habits so older cartridges, stored filters, and replacement stock
+          are used in the correct order and tracked clearly across locations and machines.
+        </p>
+      </div>
+
+      <div class="p-6 border border-gray-200 rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Traceability logs</h3>
+        <p class="text-gray-600 leading-7">
+          Record installation dates, due dates, PSI values, technician actions, and service notes to strengthen
+          accountability, verification, and inspection-ready maintenance history.
+        </p>
+      </div>
+
+      <div class="p-6 border border-gray-200 rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">NSF-aligned sanitation focus</h3>
+        <p class="text-gray-600 leading-7">
+          Reinforce cleaner equipment practices by supporting scheduled filter changes, cleaner water pathways,
+          and more consistent maintenance verification for beverage, ice, and food service systems.
+        </p>
+      </div>
+
+      <div class="p-6 border border-gray-200 rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Corrective action tracking</h3>
+        <p class="text-gray-600 leading-7">
+          When PSI falls outside target range or a replacement is overdue, FiltraCore helps teams document
+          corrective actions before the issue turns into downtime or a sanitation risk.
+        </p>
+      </div>
+
+      <div class="p-6 border border-gray-200 rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Date marking & intervals</h3>
+        <p class="text-gray-600 leading-7">
+          Keep visible replacement intervals, install dates, and next-service dates so operators can verify
+          schedules quickly and maintain disciplined preventive maintenance routines.
+        </p>
+      </div>
+
+      <div class="p-6 border border-gray-200 rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Machine-by-machine visibility</h3>
+        <p class="text-gray-600 leading-7">
+          View each machine as its own monitored control point with service history, filter status,
+          and replacement accountability tied directly to the unit.
+        </p>
+      </div>
+
+      <div class="p-6 border border-gray-200 rounded-xl">
+        <h3 class="text-lg font-semibold mb-3">Inspection-ready records</h3>
+        <p class="text-gray-600 leading-7">
+          Build a more organized record trail for supervisors, engineers, and operations teams by keeping
+          maintenance documentation accessible, consistent, and easy to verify.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
   <!-- ROI SECTION -->
   <section class="px-8 py-20 border-t border-gray-200 text-center">
 
     <h2 class="text-3xl font-semibold mb-6">Why FiltraCore?</h2>
 
-    <p class="text-gray-600 max-w-2xl mx-auto">
-      Avoid health violations, reduce maintenance costs, and ensure consistent water quality 
-      across all machines. FiltraCore helps you stay compliant and efficient.
+    <p class="text-gray-600 max-w-3xl mx-auto leading-8">
+      Avoid health violations, reduce maintenance costs, and support better food safety routines across beverage,
+      ice, coffee, and water systems. FiltraCore helps teams stay organized with filter traceability, FIFO-ready
+      inventory logic, preventive maintenance records, and cleaner operational discipline.
     </p>
 
   </section>
@@ -127,7 +234,7 @@
 
     <h2 class="text-3xl font-semibold mb-6">Ready to take control?</h2>
 
-    <a href="mailto:hello@bastidasystems.com" class="px-6 py-3 bg-black text-white rounded-full font-medium hover:opacity-90 hover:scale-105 transition inline-block">
+    <a href="mailto:bastidasystems@gmail.com" class="px-6 py-3 bg-black text-white rounded-full font-medium hover:opacity-90 hover:scale-105 transition inline-block">
       Request Demo
     </a>
 
@@ -140,6 +247,16 @@
       <a href="index.html#products" class="hover:text-black transition">Products</a>
       <a href="about.html" class="hover:text-black transition">About</a>
       <a href="index.html#contact" class="hover:text-black transition">Contact</a>
+    </div>
+
+    <div class="flex flex-col items-start gap-4">
+      <a href="mailto:bastidasystems@gmail.com" class="inline-block px-6 py-3 border border-gray-600 rounded-full hover:border-white transition duration-300 hover:scale-105">
+        bastidasystems@gmail.com
+      </a>
+
+      <a href="tel:+17020000000" class="inline-block px-6 py-3 border border-gray-600 rounded-full hover:border-white transition duration-300 hover:scale-105">
+        +1 (702) 000-0000
+      </a>
     </div>
 
     <p>© 2026 Bastida Systems. All rights reserved.</p>
