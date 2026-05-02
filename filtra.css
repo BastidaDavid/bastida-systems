@@ -56,6 +56,18 @@ button {
   margin: 0 auto;
 }
 
+.filtracore-text-sweep {
+  animation: filtracoreTextSweep 3.6s ease-in-out 0.25s both;
+  background: linear-gradient(90deg, #2563eb 0%, #2563eb 24%, #111827 44%, #0ea5e9 62%, #0ea5e9 100%);
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 35px rgba(37, 99, 235, 0.12);
+}
+
 .feature-card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
@@ -124,6 +136,23 @@ button {
   color: #6b7280;
 }
 
+@keyframes filtracoreTextSweep {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 0 10px 35px rgba(37, 99, 235, 0.14);
+  }
+
+  50% {
+    background-position: 50% 50%;
+    text-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+  }
+
+  100% {
+    background-position: 100% 50%;
+    text-shadow: 0 10px 35px rgba(14, 165, 233, 0.2);
+  }
+}
+
 @media (max-width: 768px) {
   .hero-title {
     line-height: 1.12;
@@ -135,5 +164,14 @@ button {
 
   .cta-box {
     padding: 2rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filtracore-text-sweep {
+    animation: none;
+    background: none;
+    color: #111111;
+    -webkit-text-fill-color: #111111;
   }
 }
