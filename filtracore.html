@@ -63,7 +63,7 @@
   <section class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
 
   <!-- Background Image -->
-  <img src="img/BG.jpg" alt="Background" class="absolute top-1/2 left-1/2 w-1/2 max-w-3xl -translate-x-1/2 -translate-y-1/2 object-contain opacity-20 z-0">
+  <img src="img/filtracore-dashboard.jpeg" alt="FiltraCore dashboard background" class="absolute inset-0 h-full w-full object-cover object-top opacity-10 z-0">
 
   <!-- Dark Overlay -->
   <div class="absolute inset-0 bg-white/70 z-0"></div>
@@ -95,38 +95,56 @@
 
     <h2 class="text-3xl font-semibold mb-12 text-center">Core Features</h2>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
       <div class="p-6 border border-gray-200 rounded-xl">
-        <h3 class="text-xl font-semibold mb-3">PSI Monitoring</h3>
-        <p class="text-gray-600 mb-2">
-          Track pressure levels in real-time to detect issues before failures happen.
+        <h3 class="text-xl font-semibold mb-3">Machine setup</h3>
+        <p class="text-gray-600 mb-5">
+          Register each machine with location, department, brand, model, and machine ID before assigning filters.
         </p>
 
-        <img src="img/PSImonitoring.png" alt="PSI Monitoring" class="w-full h-auto rounded-lg mt-0 mb-1 scale-110">
+        <div class="aspect-[4/3] overflow-hidden rounded-lg border border-gray-200">
+          <img src="img/filtracore-machines.jpeg" alt="FiltraCore machine registration screen" class="h-full w-full object-cover object-left-top">
+        </div>
       </div>
 
       <div class="p-6 border border-gray-200 rounded-xl">
-        <h3 class="text-xl font-semibold mb-3">Filter Lifespan</h3>
-        <p class="text-gray-600 mb-4">
-          Automatically calculate remaining life based on usage and time.
+        <h3 class="text-xl font-semibold mb-3">Guided workflow</h3>
+        <p class="text-gray-600 mb-5">
+          Walk through machine registration, filter installation, lifespan setup, dashboard review, and reporting.
         </p>
 
-        <img src="img/Filter Lifespan.png" alt="Filter Lifespan" class="w-full h-auto rounded-lg mt-0 mb-1 scale-110">
+        <div class="aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-white">
+          <img src="img/filtracore-setup.jpeg" alt="FiltraCore setup checklist" class="h-full w-full object-contain object-top">
+        </div>
       </div>
 
       <div class="p-6 border border-gray-200 rounded-xl">
-        <h3 class="text-xl font-semibold mb-3">Maintenance Alerts</h3>
-        <p class="text-gray-600">
-          Get notified before filters expire and avoid costly downtime.
+        <h3 class="text-xl font-semibold mb-3">Maintenance layer</h3>
+        <p class="text-gray-600 mb-5">
+          Resolve alerts, log inspections, document replacements, and keep maintenance records visible.
         </p>
+
+        <div class="aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-white">
+          <img src="img/filtracore-maintenance.jpeg" alt="FiltraCore maintenance summary" class="h-full w-full object-contain object-left-top">
+        </div>
+      </div>
+
+      <div class="p-6 border border-gray-200 rounded-xl">
+        <h3 class="text-xl font-semibold mb-3">Module navigation</h3>
+        <p class="text-gray-600 mb-5">
+          Move between dashboard, machines, inventory, filters, maintenance, and reports quickly.
+        </p>
+
+        <div class="aspect-[4/3] overflow-hidden rounded-lg border border-gray-200 bg-white">
+          <img src="img/filtracore-navigation.jpeg" alt="FiltraCore module navigation" class="h-full w-full object-contain object-top">
+        </div>
       </div>
 
     </div>
 
-    <!-- Background Image Below Features -->
     <div class="mt-16 flex justify-center relative">
-      <img src="img/BG.jpg" alt="Background" class="w-3/4 max-w-4xl object-contain">
+      <img src="img/filtracore-dashboard.jpeg" alt="FiltraCore dashboard overview" class="w-full max-w-5xl rounded-xl border border-gray-200 object-contain">
     </div>
 
   </section>
