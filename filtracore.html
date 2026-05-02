@@ -84,7 +84,7 @@
     </p>
 
     <div class="flex gap-4 relative z-10">
-      <a href="mailto:bastidasystems@gmail.com" class="px-6 py-3 bg-black text-white rounded-full font-medium hover:opacity-90 hover:scale-105 transition inline-block">
+      <a href="#demo-access" data-demo-access class="px-6 py-3 bg-black text-white rounded-full font-medium hover:opacity-90 hover:scale-105 transition inline-block">
         Request Demo
       </a>
     </div>
@@ -231,11 +231,33 @@
 
     <h2 class="text-3xl font-semibold mb-6">Ready to take control?</h2>
 
-    <a href="mailto:bastidasystems@gmail.com" class="px-6 py-3 bg-black text-white rounded-full font-medium hover:opacity-90 hover:scale-105 transition inline-block">
+    <a href="#demo-access" data-demo-access class="px-6 py-3 bg-black text-white rounded-full font-medium hover:opacity-90 hover:scale-105 transition inline-block">
       Request Demo
     </a>
 
   </section>
+
+  <script>
+    const demoAccessCode = 'B@stida420';
+    const demoAccessUrl = 'https://bastidadavid.github.io/filtracore-v2/';
+
+    document.querySelectorAll('[data-demo-access]').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+
+        const enteredCode = prompt('Ingresa el codigo de acceso:');
+
+        if (enteredCode === null) return;
+
+        if (enteredCode.trim() === demoAccessCode) {
+          window.location.href = demoAccessUrl;
+          return;
+        }
+
+        alert('Codigo de acceso invalido.');
+      });
+    });
+  </script>
 
   <!-- FOOTER -->
   <footer class="px-8 py-10 border-t border-gray-200 text-gray-600 text-sm text-center">
