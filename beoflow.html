@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beoflow | Bastida Systems</title>
+  <link rel="icon" type="image/png" href="img/logobeoflow.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .screen-shot {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+    }
+    .screen-shot-center {
+      object-position: top center;
+    }
+  </style>
+</head>
+
+<body class="text-black bg-white">
+
+  <div id="site-header"></div>
+
+  <script>
+    const sharedHeader = `
+      <nav class="flex justify-between items-center px-4 md:px-8 py-5 border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="img/logo_bastida_sys.png" alt="Bastida Systems Logo" class="h-8 w-auto object-contain">
+            <span class="hidden md:inline text-base font-semibold tracking-[0.08em] text-black uppercase">Bastida Systems LLC</span>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-4 md:gap-8 text-sm font-medium text-gray-600">
+          <a href="index.html#products" class="hover:text-black transition">Products</a>
+          <a href="about.html" class="hover:text-black transition">About</a>
+          <a href="index.html#contact" class="hover:text-black transition">Contact</a>
+        </div>
+      </nav>
+    `;
+
+    const headerTarget = document.getElementById('site-header');
+
+    fetch('header.html')
+      .then(response => {
+        if (!response.ok) throw new Error('header.html not found');
+        return response.text();
+      })
+      .then(html => {
+        headerTarget.innerHTML = html;
+      })
+      .catch(() => {
+        headerTarget.innerHTML = sharedHeader;
+      });
+  </script>
+
+  <!-- HERO -->
+  <section class="min-h-[88vh] flex flex-col justify-center items-center text-center px-6 py-24 relative overflow-hidden">
+
+    <img src="img/beoflow-dashboard.jpeg" alt="Beoflow dashboard background" class="absolute inset-0 h-full w-full object-cover object-top opacity-10 z-0">
+    <div class="absolute inset-0 bg-white/90 z-0"></div>
+
+    <img src="img/logobeoflow.png" alt="Beoflow Logo" class="w-24 h-14 mb-6 object-contain relative z-10">
+    <p class="text-sm tracking-widest uppercase text-black mb-4 relative z-10">Beoflow</p>
+
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 relative z-10">
+      BEO Management<br>Built for Banquet Teams.
+    </h1>
+
+    <p class="text-gray-600 max-w-2xl mb-8 leading-8 relative z-10">
+      Beoflow keeps event details, menus, production, staff, and reports in one clean control center
+      so banquet teams can plan faster and execute with confidence.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 relative z-10">
+      <a href="#demo-access" data-demo-access class="px-6 py-3 bg-black text-white rounded-full font-medium hover:opacity-90 hover:scale-105 transition inline-block">
+        Request Demo
+      </a>
+      <a href="#preview" class="px-6 py-3 border border-gray-300 rounded-full font-medium hover:border-black hover:scale-105 transition inline-block">
+        View Product
+      </a>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="px-8 py-16 border-t border-gray-200">
+
+    <h2 class="text-3xl font-semibold mb-10 text-center">Made for event execution</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="p-6 border border-gray-200 rounded-lg">
+        <h3 class="text-xl font-semibold mb-3">Centralize BEOs</h3>
+        <p class="text-gray-600 leading-7">
+          Create events, upload BEO images, confirm details, and keep every order easy to find.
+        </p>
+      </div>
+
+      <div class="p-6 border border-gray-200 rounded-lg">
+        <h3 class="text-xl font-semibold mb-3">Plan production</h3>
+        <p class="text-gray-600 leading-7">
+          Turn menus and recipes into clear preparation work with quantities, status, and assignments.
+        </p>
+      </div>
+
+      <div class="p-6 border border-gray-200 rounded-lg">
+        <h3 class="text-xl font-semibold mb-3">Stay ready</h3>
+        <p class="text-gray-600 leading-7">
+          Track upcoming events, draft BEOs, confirmed events, staff, inventory, and reports from one dashboard.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCT PREVIEW -->
+  <section id="preview" class="px-8 py-16 border-t border-gray-200">
+
+    <h2 class="text-3xl font-semibold mb-6 text-center">See the flow</h2>
+
+    <p class="text-gray-600 max-w-2xl mx-auto text-center leading-8 mb-12">
+      Four screens cover the core operation: dashboard, setup, inventory, and calendar control.
+    </p>
+
+    <div class="grid gap-8 max-w-6xl mx-auto">
+      <article class="border border-gray-200 rounded-lg overflow-hidden bg-white">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Dashboard</h3>
+          <p class="text-gray-600 leading-7">
+            Live view of event counts, draft BEOs, confirmed events, the calendar, and the next event.
+          </p>
+        </div>
+        <div class="aspect-[16/7] border-t border-gray-200">
+          <img src="img/beoflow-dashboard.jpeg" alt="Beoflow dashboard with event calendar" class="screen-shot">
+        </div>
+      </article>
+
+      <div class="grid gap-8 lg:grid-cols-3 lg:items-start">
+        <article class="border border-gray-200 rounded-lg overflow-hidden bg-white">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Smart setup</h3>
+            <p class="text-gray-600 leading-7">
+              Guided checklist to bring inventory, recipes, menus, events, and dashboard progress online.
+            </p>
+          </div>
+          <div class="aspect-[4/5] border-t border-gray-200">
+            <img src="img/beoflow-smart-setup.jpeg" alt="Beoflow smart setup checklist" class="screen-shot screen-shot-center">
+          </div>
+        </article>
+
+        <article class="border border-gray-200 rounded-lg overflow-hidden bg-white lg:col-span-2">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Inventory</h3>
+            <p class="text-gray-600 leading-7">
+              Track item quantity, cost, storage area, category, and stock status for event prep.
+            </p>
+          </div>
+          <div class="aspect-[16/7] border-t border-gray-200">
+            <img src="img/beoflow-inventory.jpeg" alt="Beoflow inventory control screen" class="screen-shot">
+          </div>
+        </article>
+
+        <article class="border border-gray-200 rounded-lg overflow-hidden bg-white lg:col-span-3">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Event calendar</h3>
+            <p class="text-gray-600 leading-7">
+              Review scheduled events by month and keep event days visible before production begins.
+            </p>
+          </div>
+          <div class="aspect-[16/5] border-t border-gray-200">
+            <img src="img/beoflow-calendar.jpeg" alt="Beoflow event calendar view" class="screen-shot">
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="px-8 py-16 border-t border-gray-200 text-center">
+
+    <h2 class="text-3xl font-semibold mb-6">Ready to run events with better control?</h2>
+
+    <p class="text-gray-600 max-w-2xl mx-auto leading-8 mb-8">
+      Beoflow helps banquet teams move from BEO details to production and execution without losing visibility.
+    </p>
+
+    <a href="#demo-access" data-demo-access class="px-6 py-3 bg-black text-white rounded-full font-medium hover:opacity-90 hover:scale-105 transition inline-block">
+      Request Demo
+    </a>
+
+  </section>
+
+  <script>
+    const demoAccessCode = 'B@stida420';
+    const demoAccessUrl = 'https://bastidadavid.github.io/beoflow/#';
+
+    document.querySelectorAll('[data-demo-access]').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+
+        const enteredCode = prompt('Ingresa el codigo de acceso:');
+
+        if (enteredCode === null) return;
+
+        if (enteredCode.trim() === demoAccessCode) {
+          window.location.href = demoAccessUrl;
+          return;
+        }
+
+        alert('Codigo de acceso invalido.');
+      });
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="px-8 py-10 border-t border-gray-200 text-gray-600 text-sm text-center">
+
+    <div class="flex justify-center gap-6 mb-4 text-gray-500">
+      <a href="index.html#products" class="hover:text-black transition">Products</a>
+      <a href="about.html" class="hover:text-black transition">About</a>
+      <a href="index.html#contact" class="hover:text-black transition">Contact</a>
+    </div>
+
+    <div class="flex flex-col items-start gap-4">
+      <a href="mailto:bastidasystems@gmail.com" class="inline-block px-6 py-3 border border-gray-600 rounded-full hover:border-black transition duration-300 hover:scale-105">
+        bastidasystems@gmail.com
+      </a>
+
+      <a href="tel:+17020000000" class="inline-block px-6 py-3 border border-gray-600 rounded-full hover:border-black transition duration-300 hover:scale-105">
+        +1 (702) 661-7149
+      </a>
+    </div>
+
+    <p>&copy; 2026 Bastida Systems. All rights reserved.</p>
+
+  </footer>
+
+</body>
+</html>
