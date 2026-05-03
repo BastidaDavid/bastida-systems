@@ -64,18 +64,47 @@ body {
 }
 
 .promo-card,
-.screen-card {
+.screen-card,
+.watch-detail,
+.watch-feature-card,
+.watch-gallery-card {
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
 .promo-card:hover,
-.screen-card:hover {
+.screen-card:hover,
+.watch-detail:hover,
+.watch-feature-card:hover,
+.watch-gallery-card:hover {
   border-color: #cbd5e1;
   box-shadow: 0 22px 55px rgba(15, 23, 42, 0.09);
   transform: translateY(-6px);
 }
 
 .screen-card:hover .screen-shot {
+  transform: scale(1.025);
+}
+
+.watch-promo-image {
+  width: 100%;
+  height: auto;
+  max-height: 31rem;
+  object-fit: contain;
+  display: block;
+}
+
+.watch-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  padding: 1.25rem;
+  background: #fff;
+  transition: transform 0.7s ease;
+}
+
+.watch-gallery-card:hover .watch-gallery-image {
   transform: scale(1.025);
 }
 
@@ -140,7 +169,11 @@ body {
   .reveal,
   .promo-card,
   .screen-card,
+  .watch-detail,
+  .watch-feature-card,
+  .watch-gallery-card,
   .screen-shot,
+  .watch-gallery-image,
   .demo-button,
   .text-color-shift {
     transition: none;
